@@ -108,6 +108,17 @@ fun sesion() {
             Text(text = "Iniciar sesión")
         }
 
+        Button(
+            onClick = {
+
+
+
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Crear usuario")
+        }
+
 
         if (error) {
             Text(
