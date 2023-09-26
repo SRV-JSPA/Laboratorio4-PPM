@@ -35,18 +35,97 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    sesion()
                 }
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun sesion() {
+    var pantallalog by remember { mutableStateOf(0) }
+
+
+
+    var usuarioF = arrayListOf<String>()
+    var contraF = arrayListOf<String>()
+    var tipoF = arrayListOf<Boolean>()
+
+
+
+
+    var usuarioN by remember { mutableStateOf("") }
+    var contraN by remember { mutableStateOf("") }
+    var error by remember { mutableStateOf(false) }
+
+    Surface(
+
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Iniciar sesión",
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+
+        OutlinedTextField(
+            value = usuarioN,
+            onValueChange = { usuarioN = it },
+            label = { Text(text = "Usuario") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp)
+        )
+
+        OutlinedTextField(
+            value = contraN,
+            onValueChange = { contraN = it },
+            label = { Text(text = "Contraseña") },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
+        )
+
+        Button(
+            onClick = {
+
+
+
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Iniciar sesión")
+        }
+
+
+        if (error) {
+            Text(
+                text = "Usuario o contraseña incorrecta",
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(top = 8.dp)
+            )
+        }
+
+
+    }
+
+}
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     Laboratorio4Theme {
-
+       sesion()
     }
 }
