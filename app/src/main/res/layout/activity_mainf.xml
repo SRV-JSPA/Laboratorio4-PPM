@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/skyBlue"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/usuarioEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:hint="Usuario"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/contrasenaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:hint="Contraseña"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/iniciarSesionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión"
+        android:backgroundTint="@color/green"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/crearUsuarioButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="Crear usuario"/>
+</LinearLayout>

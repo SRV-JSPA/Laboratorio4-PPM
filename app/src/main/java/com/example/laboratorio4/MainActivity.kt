@@ -15,10 +15,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,23 +41,7 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun sesion() {
-    var pantallalog by remember { mutableStateOf(0) }
-
-
-
-    var usuarioF = arrayListOf<String>()
-    var contraF = arrayListOf<String>()
-    var tipoF = arrayListOf<Boolean>()
-
-
-
-
-    var usuarioN by remember { mutableStateOf("") }
-    var contraN by remember { mutableStateOf("") }
-    var error by remember { mutableStateOf(false) }
-
     Surface(
-
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
@@ -80,8 +60,8 @@ fun sesion() {
         )
 
         OutlinedTextField(
-            value = usuarioN,
-            onValueChange = { usuarioN = it },
+            value = "",
+            onValueChange = { },
             label = { Text(text = "Usuario") },
             modifier = Modifier
                 .fillMaxWidth()
@@ -89,8 +69,8 @@ fun sesion() {
         )
 
         OutlinedTextField(
-            value = contraN,
-            onValueChange = { contraN = it },
+            value = "",
+            onValueChange = { },
             label = { Text(text = "Contraseña") },
             modifier = Modifier
                 .fillMaxWidth()
@@ -99,9 +79,7 @@ fun sesion() {
 
         Button(
             onClick = {
-
-
-
+                // Lógica de inicio de sesión (si es necesario)
             },
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -110,33 +88,19 @@ fun sesion() {
 
         Button(
             onClick = {
-
-
-
+                // Lógica de creación de usuario (si es necesario)
             },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Crear usuario")
         }
-
-
-        if (error) {
-            Text(
-                text = "Usuario o contraseña incorrecta",
-                color = MaterialTheme.colorScheme.error,
-                modifier = Modifier.padding(top = 8.dp)
-            )
-        }
-
-
     }
-
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     Laboratorio4Theme {
-       sesion()
+        sesion()
     }
 }
